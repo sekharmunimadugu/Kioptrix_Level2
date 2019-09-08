@@ -1,0 +1,59 @@
+# Nmap 7.60 scan initiated Fri Sep  6 08:40:04 2019 as: nmap -sC -O -A -oA kioptrix-level2 10.0.2.11
+Nmap scan report for 10.0.2.11
+Host is up (0.00043s latency).
+Not shown: 994 closed ports
+PORT     STATE SERVICE  VERSION
+22/tcp   open  ssh      OpenSSH 3.9p1 (protocol 1.99)
+| ssh-hostkey: 
+|   1024 8f:3e:8b:1e:58:63:fe:cf:27:a3:18:09:3b:52:cf:72 (RSA1)
+|   1024 34:6b:45:3d:ba:ce:ca:b2:53:55:ef:1e:43:70:38:36 (DSA)
+|_  1024 68:4d:8c:bb:b6:5a:bd:79:71:b8:71:47:ea:00:42:61 (RSA)
+|_sshv1: Server supports SSHv1
+80/tcp   open  http     Apache httpd 2.0.52 ((CentOS))
+|_http-server-header: Apache/2.0.52 (CentOS)
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+111/tcp  open  rpcbind  2 (RPC #100000)
+| rpcinfo: 
+|   program version   port/proto  service
+|   100000  2            111/tcp  rpcbind
+|   100000  2            111/udp  rpcbind
+|   100024  1            652/udp  status
+|_  100024  1            655/tcp  status
+443/tcp  open  ssl/http Apache httpd 2.0.52 ((CentOS))
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+| ssl-cert: Subject: commonName=localhost.localdomain/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=--
+| Not valid before: 2009-10-08T00:10:47
+|_Not valid after:  2010-10-08T00:10:47
+|_ssl-date: 2019-09-06T16:40:31+00:00; +4h00m00s from scanner time.
+| sslv2: 
+|   SSLv2 supported
+|   ciphers: 
+|     SSL2_RC4_128_EXPORT40_WITH_MD5
+|     SSL2_RC4_128_WITH_MD5
+|     SSL2_RC2_128_CBC_EXPORT40_WITH_MD5
+|     SSL2_DES_64_CBC_WITH_MD5
+|     SSL2_RC4_64_WITH_MD5
+|     SSL2_RC2_128_CBC_WITH_MD5
+|_    SSL2_DES_192_EDE3_CBC_WITH_MD5
+631/tcp  open  ipp      CUPS 1.1
+| http-methods: 
+|_  Potentially risky methods: PUT
+|_http-server-header: CUPS/1.1
+|_http-title: 403 Forbidden
+3306/tcp open  mysql    MySQL (unauthorized)
+MAC Address: 08:00:27:27:5E:39 (Oracle VirtualBox virtual NIC)
+Device type: general purpose
+Running: Linux 2.6.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6
+OS details: Linux 2.6.9 - 2.6.30
+Network Distance: 1 hop
+
+Host script results:
+|_clock-skew: mean: 3h59m59s, deviation: 0s, median: 3h59m59s
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.43 ms 10.0.2.11
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Sep  6 08:40:36 2019 -- 1 IP address (1 host up) scanned in 33.41 seconds
